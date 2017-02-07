@@ -36,7 +36,7 @@ if [ ! -e "gradlew" ]; then
     exit
 fi
 
+export GRADLE_OPTS='-Dorg.gradle.daemon=false'
 ./gradlew clean build publish
-./gradlew --stop # needed to kill the container, else daemon will keep it alive
 
 echo "Build finished"
